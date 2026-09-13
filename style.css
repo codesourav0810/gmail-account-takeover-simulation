@@ -1,0 +1,3726 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: font-light;
+  src: url(FontsFree-Net-SFProDisplay-Light.ttf);
+}
+@font-face {
+  font-family: font-medium;
+  src: url(SFPRODISPLAYMEDIUM.OTF);
+}
+@font-face {
+  font-family: font-regular;
+  src: url(SFPRODISPLAYREGULAR.OTF);
+}
+html{
+  scroll-behavior: smooth;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  --body-font:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #07121a;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+.userScreen,
+.attackerScreen {
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.headingUser,
+.headingAttacker {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: font-regular;
+  padding: 20px 0 10px;
+}
+
+.userScreenPhone,
+.attackerScreenPhone {
+  margin: 2rem;
+  display: block;
+  height: 70vh;
+  width: auto;
+}
+
+.user-phone-container,
+.attacker-phone-container {
+  position: relative;
+
+  overflow: hidden;
+}
+.user-phone-content,
+.attacker-phone-content {
+  position: absolute;
+  top: 4%;
+  left: 7%;
+  width: 86%;
+  height: 92%;
+}
+.user-phone-content {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 74%;
+
+  overflow: hidden;
+  /* border: 2px solid rgb(0, 0, 0); */
+}
+
+.attacker-phone-content {
+  position: absolute;
+  top: 24%;
+  left: 15%;
+  width: 70%;
+  height: 65%;
+  overflow: hidden;
+  /* border: 2px solid rgb(250, 250, 250); */
+}
+
+.userSide,
+.attackerSide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*LABEL USER*/
+.user-phone-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-label {
+  margin-top: 6px;
+  font-family: font-medium;
+  font-size: 20px;
+  font-weight: 600;
+  color:  rgba(255, 255, 255, 0.70);
+}
+/*LABEL ATTACKER*/
+.attacker-phone-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-label-attacker {
+  margin-top: 6px;
+  font-family: font-medium;
+  font-size: 20px;
+  font-weight: 600;
+    color:  rgba(255, 255, 255, 0.70);
+}
+/*SCREEN 1 USER*/
+.UserScreen1 {
+  position: relative;
+}
+.userMessHead1 {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0;
+}
+.headText1 {
+  display: flex;
+  gap: 5px;
+  font-family: font-regular;
+  font-size: small;
+}
+.userMessBody1 {
+  margin-top: 2rem;
+  position: relative;
+}
+.userMessBodyText1 {
+  font-family: font-regular;
+  font-size: small;
+  position: absolute;
+
+  top: 31%;
+  left: 13%;
+
+  width: 70%;
+  z-index: 10;
+}
+.userMessbubble {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin-left: 10px;
+  z-index: 1;
+}
+.ParagraphFirst {
+  margin-bottom: 10px;
+}
+.userMessBodyText1 a {
+  color: blue;
+  cursor: pointer;
+}
+
+.userFooter1 {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
+  height: 22px;
+}
+.userFooter1 input {
+  min-width: 0;
+  flex: 1;
+  border-radius: 50px;
+  border: 1.5px solid #b5b5b5;
+  padding: 4px;
+  font-size: clamp(8px, 1.2vw, 12px);
+  padding-left: clamp(7px, 1vw, 11px);
+  outline: none;
+  height: 100%;
+}
+
+/*ATTACKER SCREEN 1*/
+.attackerScreen1 {
+  position: relative;
+}
+.attackerHeader1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.attackerHeader1 h3 {
+  color: #c5221f;
+  font-family: font-medium;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.attackerBody1 {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.attackerBody1 h3 {
+  font-family: font-medium;
+  color: white;
+  font-weight: 500;
+  font-size: large;
+}
+
+.attackerContentbox1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 0.5px solid #424242;
+  position: absolute;
+  height: 65%;
+  width: 90%;
+  margin-top: 20%;
+  border-radius: 12px;
+}
+.attackerContentbox1 h3 {
+  font-family: font-medium;
+  color: white;
+  margin-bottom: 15px;
+}
+.attackerContentbox1 h5 {
+  font-family: font-medium;
+  color: white;
+}
+.attackerContentbox1 img {
+  margin: 15px;
+}
+
+/*USER SCREEN 2*/
+.UserScreen2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.urlBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e1e5;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 5px;
+  font-family: font-regular;
+  font-weight: 300;
+}
+
+.userheader2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.userheader2 h3 {
+  font-family: font-medium;
+  font-weight: 100;
+  padding: 10px;
+}
+.userheader2 h5 {
+  font-family: font-regular;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.userbody2 {
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-self: start;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.userbody2 h5 {
+  font-family: font-light;
+}
+.userbody2 input {
+  width: 90%;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  padding-left: 5px;
+  color: #868585;
+  font-family: font-light;
+  padding: 5px;
+  cursor: text;
+}
+.userbody2 button {
+  background-color: #1553ce;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  width: 90%;
+  cursor: pointer;
+  position: relative;
+  z-index: 11;
+}
+
+.userfooter2 {
+  position: absolute;
+  bottom: 1%;
+  left: 27%;
+}
+
+/*ATTACKER PHONE SCREEN 2*/
+.attackerScreen2 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.attackerHeader2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 2px;
+}
+.attackerHeader2 h3 {
+  font-family: font-medium;
+  font-size: large;
+  font-weight: 100;
+  padding: 5px;
+  color: white;
+}
+.liveLogo {
+  padding: 0px 10px;
+  border-radius: 5px;
+  background-color: #591a19;
+}
+.attackerHeader2 h5 {
+  font-family: font-medium;
+  font-weight: 100;
+  padding: 5px;
+  color: white;
+  font-size: small;
+}
+
+.attackerSubHead2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 2px;
+  gap: 15px;
+}
+.attackerSubHead2 h3 {
+  font-family: font-medium;
+  font-size: 16px;
+  font-weight: 300;
+  color: #c5221f;
+}
+.attackerBody2 {
+  margin-top: 25px;
+
+  position: relative;
+  height: 60%;
+  border-radius: 10px;
+  margin: 10px 7px;
+  gap: 8px;
+}
+.attackerBody2 {
+  display: grid;
+}
+.attackerBody2 .box2 {
+  border: 1px solid #484848;
+  border-radius: 5px;
+  position: relative;
+}
+.attackerBody2 h5 {
+  color: #a3a3a3;
+  font-family: font-light;
+  margin: 5px 8px;
+}
+.input {
+  height: 55%;
+  position: absolute;
+  inset: 0;
+  top: 50%;
+  color: #a3a3a3;
+  padding-left: 6px;
+}
+
+/*USER'S SCREEN 3*/
+
+.urlBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e1e5;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 5px;
+  font-family: font-regular;
+  font-weight: 300;
+}
+.userheader3 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.userheader3 h3 {
+  font-family: font-medium;
+  font-weight: 100;
+  padding: 10px;
+}
+.userheader3 h5 {
+  font-family: font-regular;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.userSubHeader3 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.usermail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 102%;
+}
+.usermail img {
+  height: 20px;
+}
+.usermail h4 {
+  font-family: font-light;
+  font-size: small;
+}
+.usermail h5 {
+  font-family: font-regular;
+  font-weight: 400;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.userbody3 {
+  margin-left: 10px;
+  display: flex;
+  align-self: start;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+    z-index: 12;
+}
+.userbody3 h5 {
+  font-family: font-light;
+}
+.userbody3 input {
+  width: 90%;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  padding-left: 5px;
+  color: #868585;
+  font-family: font-light;
+  padding: 5px;
+  cursor: text;
+}
+.userbody3 button {
+  background-color: #1553ce;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  width: 90%;
+  cursor: pointer;
+  position: relative;
+  z-index: 13;
+}
+.userbody3 span{
+  font-family: font-regular;
+  font-size:small;
+  color: #1553CE;
+  font-weight: 500;
+}
+
+/*ATTACKER SCREEN 3*/
+
+.attackerScreen3 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.attackerHeader3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 2px;
+}
+.attackerHeader3 h3 {
+  font-family: font-medium;
+  font-size: large;
+  font-weight: 100;
+  padding: 5px;
+  color: white;
+}
+.liveLogo {
+  padding: 0px 10px;
+  border-radius: 5px;
+  background-color: #591a19;
+}
+.attackerHeader3 h5 {
+  font-family: font-medium;
+  font-weight: 100;
+  padding: 5px;
+  color: white;
+  font-size: small;
+}
+
+.attackerSubHead3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 2px;
+  gap: 15px;
+}
+.attackerSubHead3 h3 {
+  font-family: font-medium;
+  font-size: 16px;
+  font-weight: 300;
+  color: #c5221f;
+}
+.attackerBody3 {
+  margin-top: 25px;
+
+  position: relative;
+  height: 60%;
+  border-radius: 10px;
+  margin: 10px 7px;
+  gap: 8px;
+}
+.attackerBody3 {
+  display: grid;
+}
+.attackerBody3 .box3 {
+  border: 1px solid #484848;
+  border-radius: 5px;
+  position: relative;
+}
+.attackerBody3 h5 {
+  color: #a3a3a3;
+  font-family: font-light;
+  margin: 5px 8px;
+}
+.input3 {
+  height: 55%;
+  position: absolute;
+  inset: 0;
+  top: 50%;
+  color: #a3a3a3;
+  padding-left: 6px;
+      font-size: small;
+    font-family: 'font-light';
+}
+
+/*USER SCREEN 4*/
+
+.urlBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e1e5;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 5px;
+  font-family: font-regular;
+  font-weight: 300;
+}
+.userheader4 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.userheader4 h3 {
+  font-family: font-medium;
+  font-weight: 100;
+  padding: 10px;
+}
+.userheader4 h5 {
+  font-family: font-regular;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.userBody4{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.userBody4 h4{
+  text-align: center;
+  font-family: font-regular;
+  font-weight: 200;
+  width: 112%;
+}
+.codeBoxes{
+  display: flex;
+  justify-content: center;
+  margin:10px;
+  margin-top: 13px;
+  gap: 5px;
+  width: 100%;
+  height: fit-content;
+  z-index: 14;
+} 
+.codeBoxes input{
+  border-radius: 8px;
+  border: 2px solid #D9D9D9;
+  width: 100%;
+  height: 2.5rem;
+  z-index: 15;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.usersubbody4 {
+  margin-left: 10px;
+  display: flex;
+  align-self: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+    z-index: 12;
+    margin-bottom: 5px;
+}
+.usersubbody4 button {
+  background-color: #1553ce;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  width: 90%;
+  cursor: pointer;
+  position: relative;
+  z-index: 13;
+}
+.usersubbody4 span{
+  font-family: font-regular;
+  font-size:small;
+  color: #1553CE;
+  font-weight: 500;
+  text-align: center;
+  padding-right: 2rem;
+}
+#timer{
+  color: black;
+  padding-bottom: 5px;
+}
+
+/*ATTACKER SCREEN 4*/
+.attackerScreen4{
+  position: relative;
+}
+
+.attackerSubHead4{
+  padding: 10px 5px;
+
+}
+.attackerSubHead4 h3{
+  font-family: font-medium;
+  font-size: 16px;
+  font-weight: 300;
+color: #67AD65;
+}
+.attackerbody4{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.subbody4-1, .subbody4-2, .subbody4-3{
+  border-radius: 10px;
+  border:2px solid #484848;
+  width: 96%;
+  height: 16%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.attackerbody4> div{
+  color: white;
+  font-family: font-light;
+  padding: 7px;
+  font-size: small;
+}
+.commonconatainer{
+    margin-top: 5px;
+    padding: 4px 10px;
+    background-color: #1C1E22;
+    width: 93%;
+    height: 55%;
+    border-radius: 10px;
+    font-family: font-light;
+    font-size: x-small;
+}
+.subbody4-4{
+  background-color: #181601;
+  border: 2px solid rgba(255, 255, 0, 0.489); 
+    border-radius: 10px;
+  width: 96%;
+  height: 19%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.waitingOTP{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+.subbody4-4 h6{
+  font-family: font-light;
+  font-size: x-small;
+  text-align: center;
+  margin: 5px;
+  padding-top: 6px;
+}
+
+/*USER SCREEN 5*/
+
+.urlBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e1e5;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 5px;
+  font-family: font-regular;
+  font-weight: 300;
+}
+.userheader5 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.userheader5 h3 {
+  font-family: font-medium;
+  font-weight: 100;
+  padding: 10px;
+}
+.userheader5 h5 {
+  font-family: font-regular;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.userBody5{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.userBody5 h4{
+  text-align: center;
+  font-family: font-regular;
+  font-weight: 200;
+  width: 112%;
+}
+.codeBoxes5{
+  display: flex;
+  justify-content: center;
+  margin:10px;
+  margin-top: 13px;
+  gap: 5px;
+  width: 100%;
+  height: fit-content;
+  z-index: 14;
+} 
+.codeBoxes5 input{
+  border-radius: 8px;
+  border: 2px solid #D9D9D9;
+  width: 100%;
+  height: 2.5rem;
+  z-index: 15;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.usersubbody5 {
+  margin-left: 10px;
+  display: flex;
+  align-self: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+    z-index: 12;
+    margin-bottom: 5px;
+}
+.usersubbody5 button {
+  background-color: #1553ce;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  width: 90%;
+  cursor: pointer;
+  position: relative;
+  z-index: 13;
+}
+.usersubbody5 span{
+  font-family: font-regular;
+  font-size:small;
+  color: #1553CE;
+  font-weight: 500;
+  text-align: center;
+  padding-right: 2rem;
+}
+#timer{
+  color: black;
+  padding-bottom: 5px;
+}
+
+/*COMMON HEADER AND FOOTER FOR ATTACKER SCREEN 4 AND 5*/
+
+.attackerHeader5 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 2px;
+}
+.attackerHeader5 h3 {
+  font-family: font-medium;
+  font-size: large;
+  font-weight: 100;
+  padding: 5px;
+  color: white;
+}
+.liveLogo {
+  padding: 0px 10px;
+  border-radius: 5px;
+  background-color: #591a19;
+}
+.attackerHeader5 h5 {
+  font-family: font-medium;
+  font-weight: 100;
+  color: white;
+  font-size: small;
+}
+.attackerline4{
+  position: absolute;
+  top: 12%;
+}
+
+.attackerfooter5{
+  position: absolute;
+  top: 85%;
+ display: flex;
+ justify-content: center;
+ width: 100%;
+ margin-top: 10px;
+}
+.attackerfooter5 h4{
+    color:#FBE253;
+  font-family: font-light;
+  font-weight: 100;
+}
+
+/*ATTACKER SCREEN 5*/
+.attackerScreen5{
+  position: relative;
+}
+.attackerSubHead5{
+  padding: 10px 5px;
+
+}
+.attackerSubHead5 h3{
+  font-family: font-medium;
+  font-size: 16px;
+  font-weight: 300;
+color: #67AD65;
+}
+.attackerbody5{
+  height: 60%;
+  
+}
+.attacker5-subbody1, .attacker5-subbody2 {
+  margin: 10px;
+  border: 1px solid #484848;
+  height: 40%;
+  border-radius: 10px;
+}
+.attacker5-subbody1{
+  height: 50%;
+  padding: 10px;
+    row-gap:5px;
+}
+
+#attackerOtp{
+  color:white;
+  font-family: font-regular;
+  padding: 15px;
+}
+
+.attacker5-subbody2{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.attacker5-subbody1 h4,.attacker5-subbody2 h4{
+    color: white;
+  font-family: font-light;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.OTPbox5{
+  margin-top: 5px;
+  display: block;
+  background-color: #1C1E22;
+  height: 50%;
+  width: 95%;
+  border-radius: 5px;
+}
+
+.attacker5-subbody2 h4{
+  color: #67AD65;
+  font-family: font-regular;
+}
+.loader {
+  padding-left: 10px;
+    width: 26px;
+    height: 26px;
+        flex: 0 0 26px;
+    border: 5px solid #ddd;
+      border-radius: 50%;
+        border-top-color: #399447;
+    border-left-color: #399447;
+              animation: spin 1s linear infinite;
+
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*USER SCREEN 6*/
+.urlBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e1e1e5;
+  width: 100%;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+  gap: 5px;
+  font-family: font-regular;
+  font-weight: 300;
+}
+.userheader6 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.userheader6 h3 {
+  margin-top: 10px;
+  font-family: font-medium;
+  font-weight: 500;
+  padding: 7px;
+    text-align: center;
+}
+.userbody6 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.usersubbody6-1 h4{
+    font-family: font-light;
+  font-size: medium;
+  text-align: center;
+}
+.usersubbody6-2{
+  margin-top: 10px;
+}
+.usersubbody6-2 h4{
+    font-family: font-light;
+  font-size: small;
+  text-align: center;
+}
+.userfooter6{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+}
+.userfooter6 button {
+  background-color: #1553ce;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  width: 90%;
+  cursor: pointer;
+  position: relative;
+  z-index: 11;
+}
+
+
+/*ATTACKER SCREEN 6*/
+.attackerScreen6{
+  position: relative;
+}
+.attackerheader6 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.attackerheader6 h3 {
+  margin-top: 10px;
+  color: #399447;
+  font-family: font-medium;
+  font-weight: 500;
+  padding: 7px;
+    text-align: center;
+}
+.attackerbody6{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.attackerbody6 h4{
+  color: white;
+  font-family: font-light;
+  font-weight: 400;
+}
+.attackerbutton6{
+  margin-top: 20px ;
+  background-color: #A81C1A;
+  width: 80%;
+  padding: 5px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-family: font-light;
+  cursor: pointer;
+  z-index: 16;
+}
+
+/*USER SCREEN 7*/
+
+.UserScreen7 {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+
+/* =========================================
+   GMAIL SCREEN
+========================================= */
+
+.Screen7 .UserScreen7 .gmail-screen {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #202124;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.UserScreen7 .gmail-topbar {
+
+    height: 12%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.UserScreen7 .gmail-menu-btn {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    color: #202124;
+
+    padding: 0;
+}
+
+
+.UserScreen7 .gmail-logo {
+
+    width: 27px;
+
+    height: 27px;
+
+    object-fit: contain;
+}
+
+
+.UserScreen7 .gmail-profile-btn {
+
+    border: none;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius: 50%;
+
+    background: #4285f4;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.UserScreen7 .gmail-search {
+
+    position: relative;
+
+    width: 88%;
+
+    height: 9%;
+
+    margin: 2% auto 0;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #f1f3f4;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 14px;
+
+    color: #5f6368;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.UserScreen7 .search-icon {
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.UserScreen7 .search-text {
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   INBOX HEADER
+========================================= */
+
+.UserScreen7 .gmail-inbox-header {
+
+    height: 9%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 5%;
+}
+
+
+.UserScreen7 .inbox-title {
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+
+.UserScreen7 .refresh-btn {
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    color: #222;
+}
+
+
+/* =========================================
+   EMAIL LIST
+========================================= */
+
+.UserScreen7 .gmail-email-list {
+
+    position: absolute;
+
+    top: 21%;
+
+    left: 0;
+
+    width: 100%;
+
+    bottom: 11%;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+}
+
+
+/* hide scrollbar */
+
+.UserScreen7 .gmail-email-list::-webkit-scrollbar {
+    width: 0;
+}
+
+
+/* =========================================
+   EMAIL ROW
+========================================= */
+
+.UserScreen7 .gmail-email-row {
+
+    width: 100%;
+
+    min-height: 15%;
+
+    display: grid;
+
+    grid-template-columns: 42px 1fr 25px;
+
+    column-gap: 7px;
+
+    align-items: start;
+
+    padding: 8px 5%;
+
+    border-top: 1px solid #e2e2e2;
+
+    background: #ffffff;
+
+    cursor: pointer;
+}
+
+
+.UserScreen7 .gmail-email-row:hover {
+
+    background: #f8f9fa;
+}
+
+
+/* =========================================
+   LOGOS
+========================================= */
+
+.UserScreen7 .mail-logo-wrap {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.UserScreen7 .mail-logo-wrap img {
+
+    width: 74%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   FALLBACK LOGOS
+========================================= */
+
+.UserScreen7 .text-logo {
+
+       width: 34px;
+    height: 31px;
+    margin: 2px;
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+.UserScreen7 .flipkart-logo {
+    background: #ffd600;
+    color: #2874f0;
+}
+
+
+.UserScreen7 .booking-logo {
+    background: #1f5dbb;
+}
+
+
+.UserScreen7 .swiggy-logo {
+    background: #fc8019;
+}
+
+
+.UserScreen7 .youtube-logo {
+    background: #ff0000;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   EMAIL TEXT
+========================================= */
+
+.UserScreen7 .mail-details {
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+.UserScreen7 .mail-first-line {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 5px;
+}
+
+
+.UserScreen7 .mail-sender {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #171717;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.UserScreen7 .mail-time {
+
+    font-size: 10px;
+
+    color: #444;
+
+    white-space: nowrap;
+}
+
+
+.UserScreen7 .mail-subject {
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    color: #202124;
+}
+
+
+.UserScreen7 .mail-preview {
+
+    margin-top: 2px;
+
+    font-size: 10.5px;
+
+    line-height: 1.35;
+
+    color: #5f6368;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   STAR
+========================================= */
+
+.UserScreen7 .mail-star {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    color: #72777d;
+
+    cursor: pointer;
+
+    margin-top: 4px;
+}
+
+
+.UserScreen7 .mail-star:hover {
+
+    color: #555;
+}
+
+
+/* =========================================
+   COMPOSE BUTTON
+========================================= */
+
+.UserScreen7 .compose-btn {
+
+    position: absolute;
+
+    right: 4%;
+
+    bottom: 12%;
+
+    z-index: 10;
+
+    height: 33px;
+
+    padding: 0 11px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background: #dbe8ff;
+
+    color: #185abc;
+
+    box-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.18);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.UserScreen7 .compose-icon {
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.UserScreen7 .gmail-bottom-nav {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 11%;
+
+    background: #f7f9fc;
+
+    border-top: 1px solid #e5e5e5;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    z-index: 20;
+}
+
+
+.UserScreen7 .gmail-bottom-item {
+
+    width: 25%;
+
+    height: 80%;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 20px;
+
+    color: #303030;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 1px;
+
+    cursor: pointer;
+}
+
+
+.UserScreen7 .gmail-bottom-item.active {
+
+    background: #dce9ff;
+
+    color: #1457c5;
+}
+
+
+.UserScreen7 .bottom-nav-icon {
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.UserScreen7 .gmail-bottom-item span:last-child {
+
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .UserScreen2 {
+  display: block;
+} */
+
+/* =========================================
+   ATTACKER SCREEN 7
+========================================= */
+
+.attackerScreen7 {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #000000;
+
+}
+
+
+/* =========================================
+   GMAIL SCREEN
+========================================= */
+
+.attackerScreen7 .gmail-screen {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #000000;
+
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.attackerScreen7 .gmail-topbar {
+
+    height: 12%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    border-bottom: 1px solid #292929;
+
+}
+
+
+.attackerScreen7 .gmail-menu-btn {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    padding: 0;
+
+}
+
+
+.attackerScreen7 .gmail-logo {
+
+    width: 27px;
+
+    height: 27px;
+
+    object-fit: contain;
+
+}
+
+
+.attackerScreen7 .gmail-profile-btn {
+
+    border: none;
+
+    width: 31px;
+
+    height: 31px;
+
+    border-radius: 50%;
+
+    background: #4285f4;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.attackerScreen7 .gmail-search {
+
+    position: relative;
+
+    width: 88%;
+
+    height: 9%;
+
+    margin: 2% auto 0;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #202124;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0 14px;
+
+    color: #b8b8b8;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+.attackerScreen7 .search-icon {
+
+    font-size: 18px;
+
+    line-height: 1;
+
+}
+
+
+.attackerScreen7 .search-text {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   INBOX HEADER
+========================================= */
+
+.attackerScreen7 .gmail-inbox-header {
+
+    height: 9%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 5%;
+
+}
+
+
+.attackerScreen7 .inbox-title {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+}
+
+
+.attackerScreen7 .refresh-btn {
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   EMAIL LIST
+========================================= */
+
+.attackerScreen7 .gmail-email-list {
+
+    position: absolute;
+
+    top: 30%;
+
+    left: 0;
+
+    width: 100%;
+
+    bottom: 11%;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    background: #000000;
+
+}
+
+
+.attackerScreen7 .gmail-email-list::-webkit-scrollbar {
+
+    width: 0;
+
+}
+
+
+/* =========================================
+   EMAIL ROW
+========================================= */
+
+.attackerScreen7 .gmail-email-row {
+
+    width: 100%;
+
+    min-height: 15%;
+
+    display: grid;
+
+    grid-template-columns: 42px 1fr 25px;
+
+    column-gap: 7px;
+
+    align-items: start;
+
+    padding: 8px 5%;
+
+    border-top: 1px solid #292929;
+
+    background: #000000;
+
+    cursor: pointer;
+
+}
+
+
+.attackerScreen7 .gmail-email-row:hover {
+
+    background: #111111;
+
+}
+
+
+/* =========================================
+   LOGOS
+========================================= */
+
+.attackerScreen7 .mail-logo-wrap {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.attackerScreen7 .mail-logo-wrap img {
+
+    width: 74%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================
+   FALLBACK LOGOS
+========================================= */
+
+.attackerScreen7 .text-logo {
+
+    width: 34px;
+
+    height: 31px;
+
+    margin: 2px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+}
+
+
+.attackerScreen7 .flipkart-logo {
+
+    background: #ffd600;
+
+    color: #2874f0;
+
+}
+
+
+.attackerScreen7 .booking-logo {
+
+    background: #1f5dbb;
+
+}
+
+
+.attackerScreen7 .swiggy-logo {
+
+    background: #fc8019;
+
+}
+
+
+.attackerScreen7 .youtube-logo {
+
+    background: #ff0000;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   EMAIL TEXT
+========================================= */
+
+.attackerScreen7 .mail-details {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+}
+
+
+.attackerScreen7 .mail-first-line {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 5px;
+
+}
+
+
+.attackerScreen7 .mail-sender {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.attackerScreen7 .mail-time {
+
+    font-size: 10px;
+
+    color: #bdbdbd;
+
+    white-space: nowrap;
+
+}
+
+
+.attackerScreen7 .mail-subject {
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    color: #ffffff;
+
+}
+
+
+.attackerScreen7 .mail-preview {
+
+    margin-top: 2px;
+
+    font-size: 10.5px;
+
+    line-height: 1.35;
+
+    color: #b5b5b5;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   STAR
+========================================= */
+
+.attackerScreen7 .mail-star {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 0;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    color: #9aa0a6;
+
+    cursor: pointer;
+
+    margin-top: 4px;
+
+}
+
+
+.attackerScreen7 .mail-star:hover {
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   COMPOSE BUTTON
+========================================= */
+
+.attackerScreen7 .compose-btn {
+
+    position: absolute;
+
+    right: 4%;
+
+    bottom: 12%;
+
+    z-index: 10;
+
+    height: 33px;
+
+    padding: 0 11px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background: #a8c7fa;
+
+    color: #174ea6;
+
+    box-shadow:
+
+        0 2px 7px rgba(0, 0, 0, 0.45);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+}
+
+
+.attackerScreen7 .compose-icon {
+
+    font-size: 18px;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================
+   BOTTOM NAV
+========================================= */
+
+.attackerScreen7 .gmail-bottom-nav {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 11%;
+
+    background: #111111;
+
+    border-top: 1px solid #292929;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    z-index: 20;
+
+}
+
+
+.attackerScreen7 .gmail-bottom-item {
+
+    width: 25%;
+
+    height: 80%;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 1px;
+
+    cursor: pointer;
+
+}
+
+
+.attackerScreen7 .gmail-bottom-item.active {
+
+    background: #253554;
+
+    color: #a8c7fa;
+
+}
+
+
+.attackerScreen7 .bottom-nav-icon {
+
+    font-size: 18px;
+
+    line-height: 1;
+
+}
+
+
+.attackerScreen7 .gmail-bottom-item span:last-child {
+
+    font-size: 10px;
+
+}
+
+
+
+/*V2 Style*/
+@font-face {
+  font-family: font-light;
+  src: url(FontsFree-Net-SFProDisplay-Light.ttf);
+}
+@font-face {
+  font-family: font-medium;
+  src: url(SFPRODISPLAYMEDIUM.OTF);
+}
+@font-face {
+  font-family: font-regular;
+  src: url(SFPRODISPLAYREGULAR.OTF);
+}
+
+.headingUser, .headingAttacker{
+  color:  rgba(255, 255, 255, 0.70);
+}
+
+
+/* Background glow */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 75%,
+            rgba(0, 174, 255, 0.55),
+            transparent 42%
+        ),
+
+        radial-gradient(
+            ellipse at 45% 35%,
+            rgba(0, 90, 255, 0.55),
+            transparent 48%
+        ),
+
+        radial-gradient(
+            ellipse at 82% 15%,
+            rgba(115, 55, 220, 0.60),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 85% 80%,
+            rgba(80, 40, 180, 0.35),
+            transparent 45%
+        );
+
+    filter: blur(35px);
+    transform: scale(1.08);
+}
+.userScreenPhone,
+.attackerScreenPhone {
+filter: drop-shadow(0 8px 1px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.12));
+    border-radius: 33px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.sub-container{
+  width: 80%;
+    height: 88%;
+  border-radius: 33px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/*Navbar*/
+.logo{
+      padding-left: 10px;
+}
+
+#navbar {
+    width: 100%;
+    padding-top: 38px;
+    position: relative;
+    z-index: 100;
+    font-family: font-regular;
+}
+
+
+.navbar_container {
+    width: calc(100% - 15vw);
+    max-width: 1175px;
+    height: 54px;
+
+    margin: 17px auto;
+    font-family: font-light;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    padding: 0 14px;
+
+    border-radius: 18px;
+
+    /* Glass */
+    background: rgba(255, 255, 255, 0.13);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    /* Glass highlights + depth */
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.20),
+        0 8px 30px rgba(0, 0, 0, 0.15);
+}
+.nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_list {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 15px;
+    font-weight: 400;
+    
+    transition: color 0.25s ease;
+}
+
+.nav a:hover {
+  color: white;
+}
+.nav_list >li:hover{
+    transform: translateY(-1px);
+    
+}
+.nav_list >li{
+    transition: all 0.3s ease;
+    }
+
+/* Active link indicator
+.nav a::after {
+  content: "";
+  
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  
+  width: 100%;
+  height: 2px;
+
+    background-color: white;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+} */
+.name{
+  color: white;
+}
+/*Hero Section*/
+#home{
+    width: 100%;
+    min-height:  70vh;
+
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    align-items: start;
+
+    padding: 0 7%;
+    position: relative;
+
+}
+.hero-heading{
+  font-family: font-medium;
+  font-size: 4.5rem;
+  color: white;
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+.heroheading{
+  display: flex;
+  justify-content: center;
+      width: 80%;
+}
+#startSimulation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    min-width: 250px;
+
+    padding: 13px 30px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.25),
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    color: white;
+
+    font-family: font-medium;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+.SimButton{
+    margin-top: 22px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+#startSimulation:hover {
+    background: rgba(255, 255, 255, 0.27);
+
+    transform: translateY(-2px);
+}
+
+#startSimulation:hover {
+  transform: translateY(-4px);
+  z-index: 0;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.65);
+    transform: translateY(-3px);
+}
+.hero-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 8vh;
+}
+.hero-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 8vh;
+}
+/* INFO SECTION */
+
+.info {
+    width: 270px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    column-gap: 16px;
+    row-gap: 12px;
+
+    padding-top: 11vh;
+        margin-top: 3rem;
+}
+
+
+/* STATISTIC CARDS */
+
+.info1,
+.info2 {
+    width: 125px;
+    height: 82px;
+
+    flex: 0 0 125px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.30),
+        0 0 15px rgba(255, 255, 255, 0.08),
+        0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* NUMBER */
+
+.info h2 {
+    margin: 0;
+
+    font-family: font-medium;
+    font-size: 2rem;
+    line-height: 1;
+
+    color: rgba(255, 255, 255, 0.95);
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* CARD DESCRIPTION */
+
+.info h4 {
+    margin: 6px 0 0;
+
+    max-width: 105px;
+
+    font-family: font-regular;
+    font-size: 0.72rem;
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* POINTS */
+
+.points {
+    flex: 0 0 100%;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.points ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.points li {
+    font-family: font-regular;
+
+    font-size: 0.85rem;
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    color: rgba(255, 255, 255, 0.70);
+}
+
+
+.points li::before {
+    content: "•";
+
+    margin-right: 7px;
+
+    color: rgba(255, 255, 255, 0.70);
+}
+.step-label{
+  color: rgba(255, 255, 255, 0.70);
+  font-family: font-light;
+  letter-spacing: 2px;
+}
+ .step-label-attacker{
+  color:  rgba(255, 255, 255, 0.70);
+  font-family: font-light;
+  letter-spacing: 2px;
+}
+
+.SimulationContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.app {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 33px;
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.simulation-heading{
+  font-family: font-medium;
+  font-size: 4vw;
+  color: white;
+  margin-top: 3rem;
+}
+
+
+
+/*V3 Style*/
+/* =========================================
+   SAFETY MEASURES SECTION
+========================================= */
+
+.safety-section {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 90px 40px;
+}
+
+.safety-container {
+  width: min(1150px, 92vw);
+  min-height: 82vh;
+
+  padding: 70px 70px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px rgba(255, 255, 255, 0.02);
+}
+
+/* HEADER */
+
+.safety-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 55px;
+}
+
+.section-tag {
+  display: inline-block;
+
+  margin-bottom: 3px;
+
+  font-family: font-medium;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.safety-header h2 {
+  margin-bottom: 9px;
+
+  font-family: font-regular;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  color: #ffffff;
+}
+
+.safety-header p {
+  font-family: font-light;
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* SAFETY GRID */
+
+.safety-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+/* CARD */
+
+.safety-card {
+  min-height: 145px;
+
+  padding: 25px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.safety-card:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, 0.055);
+
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+
+/* ICON */
+
+.safety-icon {
+  min-width: 52px;
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 1.5rem;
+
+  color: #ffffff;
+}
+
+
+/* TEXT */
+
+.safety-content h3 {
+  margin-bottom: 8px;
+
+  font-family: font-regular;
+  font-size: 1.15rem;
+
+  color: #ffffff;
+}
+
+.safety-content p {
+  font-family: font-light;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .safety-container {
+    padding: 55px 45px;
+  }
+
+  .safety-grid {
+    gap: 16px;
+  }
+
+  .safety-card {
+    padding: 22px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .safety-section {
+    padding: 70px 20px;
+  }
+
+  .safety-container {
+    width: 94vw;
+    min-height: auto;
+
+    padding: 50px 25px;
+
+    border-radius: 24px;
+  }
+
+  .safety-header {
+    margin-bottom: 40px;
+  }
+
+  .safety-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-card {
+    min-height: auto;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .safety-section {
+    padding: 50px 12px;
+  }
+
+  .safety-container {
+    width: 96vw;
+
+    padding: 40px 18px;
+
+    border-radius: 20px;
+  }
+
+  .safety-header h2 {
+    font-size: 2.3rem;
+  }
+
+  .safety-header p {
+    font-size: 0.95rem;
+  }
+
+  .safety-card {
+    padding: 18px;
+
+    gap: 14px;
+  }
+
+  .safety-icon {
+    min-width: 45px;
+    width: 45px;
+    height: 45px;
+
+    font-size: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .safety-content h3 {
+    font-size: 1rem;
+  }
+
+  .safety-content p {
+    font-size: 0.88rem;
+  }
+}
+
+
+/*About Section*/
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 90px 40px;
+}
+
+.about-container {
+  width: min(1000px, 92vw);
+  min-height: 70vh;
+
+  padding: 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px rgba(255, 255, 255, 0.02);
+}
+
+
+/* HEADER */
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h2 {
+  margin-top: 12px;
+
+  font-family: font-regular;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  color: #ffffff;
+}
+
+
+/* CONTENT */
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+
+/* ICON */
+
+.about-icon {
+  min-width: 65px;
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  font-size: 1.8rem;
+}
+
+
+/* TEXT */
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.about-text p {
+  font-family: font-light;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.simulation-heading {
+  width: 100%;
+
+  margin: 0;
+  padding: 30px 20px 20px;
+
+  text-align: center;
+
+  font-family: font-regular;
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE — HEADER + HERO
+   ========================================================= */
+
+
+/* =========================================================
+   1200px — SMALL LAPTOPS
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .sub-container {
+        width: 88%;
+    }
+
+    .navbar_container {
+        width: calc(100% - 10vw);
+    }
+
+    .nav_list {
+        gap: 26px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+
+    /* HERO */
+
+    #home {
+        padding: 0 6%;
+        grid-template-columns: 1fr 250px;
+    }
+
+    .hero-heading {
+        font-size: 4rem;
+    }
+
+    .heroheading {
+        width: 90%;
+    }
+
+    .info {
+        width: 250px;
+    }
+
+    .info1,
+    .info2 {
+        width: 115px;
+        flex: 0 0 115px;
+    }
+
+}
+
+
+/* =========================================================
+   992px — TABLETS
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .sub-container {
+        width: 92%;
+    }
+
+
+    /* ---------------- NAVBAR ---------------- */
+
+    #navbar {
+        padding-top: 28px;
+    }
+
+    .navbar_container {
+        width: 92%;
+        height: 52px;
+
+        padding: 0 12px;
+    }
+
+    .logo {
+        padding-left: 5px;
+    }
+
+    .name {
+        font-size: 17px;
+    }
+
+    .nav_list {
+        gap: 20px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+
+    /* ---------------- HERO ---------------- */
+
+    #home {
+        grid-template-columns: 1fr 220px;
+
+        padding: 0 5%;
+
+        min-height: 70vh;
+    }
+
+    .hero-content {
+        padding-top: 7vh;
+    }
+
+    .heroheading {
+        width: 100%;
+    }
+
+    .hero-heading {
+        font-size: 3.5rem;
+        line-height: 0.95;
+    }
+
+
+    /* ---------------- BUTTON ---------------- */
+
+    #startSimulation {
+        min-width: 220px;
+
+        padding: 12px 25px;
+
+        font-size: 0.95rem;
+    }
+
+
+    /* ---------------- INFO ---------------- */
+
+    .info {
+        width: 220px;
+
+        column-gap: 10px;
+
+        padding-top: 9vh;
+    }
+
+    .info1,
+    .info2 {
+        width: 105px;
+        height: 78px;
+
+        flex: 0 0 105px;
+    }
+
+    .info h2 {
+        font-size: 1.7rem;
+    }
+
+    .info h4 {
+        font-size: 0.68rem;
+    }
+
+    .points li {
+        font-size: 0.75rem;
+    }
+
+}
+
+
+/* =========================================================
+   768px — SMALL TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .sub-container {
+        width: 94%;
+        border-radius: 27px;
+    }
+
+
+    /* ---------------- NAVBAR ---------------- */
+
+    #navbar {
+        padding-top: 20px;
+    }
+
+    .navbar_container {
+        width: 94%;
+        height: auto;
+
+        min-height: 52px;
+
+        padding: 8px 12px;
+
+        /*
+           Keep your existing glass effect
+           but allow the contents to fit.
+        */
+        grid-template-columns: 1fr auto;
+    }
+
+    .logo {
+        padding-left: 2px;
+    }
+
+    .name {
+        font-size: 15px;
+    }
+
+    .nav_list {
+        gap: 14px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+
+    /* ---------------- HERO ---------------- */
+
+    #home {
+        /*
+           Remove the fixed 270px second column.
+           Everything can now use the full width.
+        */
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding: 0 7%;
+    }
+
+    .hero-content {
+        padding-top: 6vh;
+    }
+
+    .heroheading {
+        width: 100%;
+    }
+
+    .hero-heading {
+        font-size: clamp(2.7rem, 7vw, 3.5rem);
+
+        line-height: 0.95;
+    }
+
+
+    /* ---------------- INFO ---------------- */
+
+    .info {
+        width: 100%;
+
+        padding-top: 45px;
+
+        justify-content: flex-start;
+
+        column-gap: 12px;
+    }
+
+    .info1,
+    .info2 {
+        width: 120px;
+        height: 80px;
+
+        flex: 0 0 120px;
+    }
+
+    .points {
+        flex-basis: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   600px — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .sub-container {
+        width: 95%;
+        border-radius: 24px;
+    }
+
+
+    /* ---------------- NAVBAR ---------------- */
+
+    #navbar {
+        padding-top: 15px;
+    }
+
+    .navbar_container {
+
+        /*
+           Stack logo and menu so the navbar
+           doesn't become cramped.
+        */
+        display: flex;
+        flex-direction: column;
+
+        width: 94%;
+
+        height: auto;
+
+        padding: 12px;
+
+        gap: 10px;
+    }
+
+    .logo {
+        padding-left: 0;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .nav_menu {
+        width: 100%;
+    }
+
+    .nav_list {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 16px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+
+    /* ---------------- HERO ---------------- */
+
+    #home {
+        padding: 0 8%;
+    }
+
+    .hero-content {
+        padding-top: 6vh;
+    }
+
+    .heroheading {
+        width: 100%;
+    }
+
+    .hero-heading {
+        font-size: clamp(2.3rem, 10vw, 3rem);
+
+        line-height: 0.95;
+
+        letter-spacing: 0;
+    }
+
+
+    /* ---------------- BUTTON ---------------- */
+
+    .SimButton {
+        margin-top: 20px;
+    }
+
+    #startSimulation {
+        min-width: 200px;
+
+        padding: 12px 22px;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------------- INFO ---------------- */
+
+    .info {
+        width: 100%;
+
+        padding-top: 40px;
+
+        justify-content: flex-start;
+
+        column-gap: 10px;
+
+        margin-top: 1.5rem;
+    }
+
+    .info1,
+    .info2 {
+        width: 115px;
+        height: 78px;
+
+        flex: 0 0 115px;
+    }
+
+    .info h2 {
+        font-size: 1.6rem;
+    }
+
+    .info h4 {
+        font-size: 0.65rem;
+    }
+
+    .points li {
+        font-size: 0.72rem;
+    }
+
+}
+
+
+/* =========================================================
+   400px — VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .sub-container {
+        width: 96%;
+    }
+
+
+    /* ---------------- NAVBAR ---------------- */
+
+    .navbar_container {
+        width: 94%;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .nav_list {
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 10.5px;
+    }
+
+
+    /* ---------------- HERO ---------------- */
+
+    #home {
+        padding: 0 7%;
+    }
+
+    .hero-heading {
+        font-size: 2.25rem;
+    }
+
+
+    /* ---------------- BUTTON ---------------- */
+
+    #startSimulation {
+        min-width: 180px;
+
+        padding: 11px 18px;
+
+        font-size: 0.85rem;
+    }
+
+
+    /* ---------------- INFO ---------------- */
+
+    .info {
+        column-gap: 8px;
+    }
+
+    .info1,
+    .info2 {
+        width: 105px;
+        height: 75px;
+
+        flex: 0 0 105px;
+    }
+
+    .info h2 {
+        font-size: 1.45rem;
+    }
+
+    .info h4 {
+        font-size: 0.6rem;
+    }
+
+    .points li {
+        font-size: 0.68rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* REMOVE OLD ATTACKER HEADER FOR SCREEN 7 */
+
+.attackerHeader5,
+.attackerline4, #attackersharedFooter{ 
+    display: none;
+}
+
+
+/*DISPLAYED SCREEN*/
+/* Hide all user screens except Screen 1 */
+.UserScreen2,
+.UserScreen3,
+.UserScreen4,
+.UserScreen5,
+.UserScreen6,
+.UserScreen7 {
+  display: none;
+}
+
+/* Hide all attacker screens except Screen 1 */
+.attackerScreen2,
+.attackerScreen3,
+.attackerScreen4,
+.attackerScreen5,
+.attackerScreen6,
+.attackerScreen7 {
+  display: none;
+}
+
+/* Show Step 1 initially */
+.UserScreen1,
+.attackerScreen1 {
+  display: block;
+}
